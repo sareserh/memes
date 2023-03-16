@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creador de Memes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/styleMemes.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>CREADOR DE MEMES</header>
+    <section class="row conteiner-fluid" id="todo">   
+        <section id="lateralIzq"  class="col-sm-4">
+            ELIGE UN TEMA
+            <select id="temas">
+                <option value="0">Seleccione...</option>
+                <option value="caricaturas">Caricaturas</option>
+                <option value="gatos">Gatos</option>
+                <option value="profesores">Profesores</option>       
+            </select>
+          
+            <article id="caricaturas" class="contenedor">
+                <form>
+                    <input type="radio" name="estilo" value="a" onclick="fotografias('bugsBunny');" checked><img src="img/bugsBunny.png" class="imgRad">
+                    <input type="radio" name="estilo" value="b" onclick="fotografias('jerry');"><img src="img/jerry.png" class="imgRad"><br>
+                    <input type="radio" name="estilo" value="c" onclick="fotografias('timon');"><img src="img/timon.png" class="imgRad">
+                    <input type="radio" name="estilo" value="d" id="otraOpcion" onclick="otra();" > Mejor Otra<br>
+                    <input type="file" name="" id="inputFile1">
+                </form>
+             </article>
+            <article id="gatos" class="contenedor">
+                <input id="inputFile1" type="file">
+                <form>
+                    <input type="radio" name="estilo" value="a" onclick="fotografias('gato1');" checked><img src="img/gato1.png" class="imgRad">
+                    <input type="radio" name="estilo" value="b" onclick="fotografias('gato2');"><img src="img/gato2.png" class="imgRad"><br>
+                    <input type="radio" name="estilo" value="c" onclick="fotografias('gato3');"><img src="img/gato3.png" class="imgRad">
+                    <input type="radio" name="estilo" value="d" id="otraOpcion" onclick="otra();" > Mejor Otra<br>
+                    <input type="file" name="" id="inputFile2">           
+                </form>
+            </article>
+            <article id="profesores" class="contenedor">
+                <input id="inputFile1" type="file">
+                <form>
+                    <input type="radio" name="estilo" value="a" onclick="fotografias('p1');" checked><img src="img/p1.png" class="imgRad">
+                    <input type="radio" name="estilo" value="b" onclick="fotografias('p2');"><img src="img/p2.png" class="imgRad"><br>
+                    <input type="radio" name="estilo" value="c" onclick="fotografias('p3');"><img src="img/p3.png" class="imgRad">
+                    <input type="radio" name="estilo" value="d" id="otraOpcion" onclick="otra();" > Mejor Otra<br>
+                    <input type="file" name="" id="inputFile3">              
+                </form>
+            </article>
+            <div id="estilos">
+                <div class="uno" onclick="uno();"></div>
+                <div class="dos" onclick="dos();"></div>
+                <div class="tres" onclick="tres();"></div>
+                <div class="cuatro" onclick="cuatro();"></div><br>
+                ESCRIBE EL TEXTO QUE QUIERES QUE CONTENGA TU MEME
+                    <input type="text" id="contenido" onclick="texto();"> <br>           
+                    ELIGE UNA TIPOGRAFÍA
+                    <form>
+                        <input type="radio" name="tipografia" value="a" onclick="tipo();" checked>Impact</input>
+                        <input type="radio" name="tipografia" value="b" onclick="c();">Arial</input>
+                        <input type="radio" name="tipografia" value="c" onclick="d();">Comic Sans</input> 
+                    </form><br>
+                    Elige un color de fondo
+                    <input type="color" id="bg" onclick="colorFondo();"><br>
+                    Elige un color de LETRA
+                    <input type="color" id="text" onclick="colorTexto();"><br>
+                    <input type="text" placeholder="Captura tú nombre" id="nombre" onclick="textoNombre();"><br>
+                    TAMAÑO DE LA LETRA<input type="number" name="tamanio" id="num" onclick="tamanio();">
+            </div>
+        </section>          
+        
+        <section id="lateralDer" class="col-sm-8">
+            <!--Meme completado-->
+            <p id="resultado"></p>
+           <div id="divFoto"><img id="foto" src="img/uno.png">
+                <p id="autor"></p>
+           </div>           
+            </section>               
+        </section>
+        
+     <script src="js/script.js"></script>
+</body>
+</html>
